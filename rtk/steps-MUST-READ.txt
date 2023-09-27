@@ -1,0 +1,19 @@
+Step Number 1️⃣: Sabse pehle store banana hai
+jiska path hai src/app/store.js (Ye recommended hai)===>app folder banana hoga src mai
+Ab aik repeated syntax hai store bananey keliye
+
+jo hai: 👇
+import {configureStore} from "@reduxjs/toolkit"
+export const store =  configureStore({
+    reducer:{},
+});
+Ab store ko complete app keliye accessible karna hai. Jo hoga like we have done in react-router
+
+Step Number 2️⃣: Create a slice
+Path for slice src/features/sliceName.js (Ye recommended hai)===>features folder banana hoga src mai
+Jiska syntax hoga 👇
+import {createSlice} from "@reduxjs/toolkit"
+export const sliceName = createSlice({
+
+})
+createSlice takes 3 things ====>> 1️⃣: SliceName 2️⃣: initialState 3️⃣: reducers
