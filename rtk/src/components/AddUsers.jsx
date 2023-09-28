@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addUser } from "../features/mySlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { v4 as uuidv4 } from "uuid";
+import { NavLink } from "react-router-dom";
 
 const AddUsers = () => {
   // const [users,setUsers] = useState([])
@@ -10,9 +14,8 @@ const AddUsers = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  
   const userInformation = {
-    id: data.length + 1,
+    unique: uuidv4(),
     name: name,
     age: age,
   };
@@ -20,42 +23,69 @@ const AddUsers = () => {
     // console.log("Name: ", name);
     // console.log("Age: ", age);
     dispatch(addUser(userInformation));
+    toast.info("User Has Been Added", {
+      position: "top-center",
+      autoClose: "4000",
+      hideProgressBar: false,
+      newestOnTop: false,
+      closeOnClickrtl: false,
+      pauseOnFocusLossdraggablepauseOnHovertheme: false,
+      theme: "dark",
+    });
+    setName("");
+    setAge("");
     event.preventDefault();
   };
   return (
-    <div style={{ color: "white" }}>
-      <form onSubmit={DataHandler}>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Name</label>
+    <>
+      <div
+        style={{
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "200px",
+        }}
+      >
+        <NavLink to={"/"}>
+          <button className="btn btn-info">Back To Home</button>
+        </NavLink>
+      </div>
+      <div style={{ color: "white" }}>
+        <form onSubmit={DataHandler}>
+          <div className="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Name"
+              required
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+          </div>
+          <div className="form-group">
+            <br />
+            <label for="exampleInputPassword1">Age</label>
+            <br />
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Age"
+              required
+              onChange={(e) => setAge(e.target.value)}
+              value={age}
+            />
+          </div>
           <br />
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Name"
-            required
-            onChange={(e) => setName(e.target.value)}
-            defaultValue={name}
-          />
-        </div>
-        <div className="form-group">
-          <br />
-          <label for="exampleInputPassword1">Age</label>
-          <br />
-          <input
-            type="number"
-            className="form-control"
-            placeholder="Age"
-            required
-            onChange={(e) => setAge(e.target.value)}
-            defaultValue={age}
-          />
-        </div>
-        <br />
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
-    </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+        <ToastContainer />
+      </div>
+    </>
   );
 };
 

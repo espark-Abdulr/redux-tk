@@ -14,7 +14,7 @@ const Options = () => {
           <button
             type="button"
             className="btn btn-primary"
-            style={{ border: "1px solid white" }}
+            style={{ border: "1px solid white", width:"20vw" }}
           >
             Add User
           </button>
@@ -23,7 +23,7 @@ const Options = () => {
           <button
             type="button"
             className="btn btn-primary"
-            style={{ border: "1px solid white" }}
+            style={{ border: "1px solid white", width:"20vw" }}
           >
             View Users
           </button>
@@ -31,9 +31,9 @@ const Options = () => {
         <button
           type="button"
           className="btn btn-primary position-relative"
-          style={{ border: "1px solid white" }}
+          style={{ border: "1px solid white", cursor: "not-allowed", width:"20vw"  }}
         >
-          Users
+          Total users Registered
           <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             {data.length}
           </span>
