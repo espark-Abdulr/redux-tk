@@ -25,11 +25,11 @@ const AddUsers = () => {
     dispatch(addUser(userInformation));
     toast.info("User Has Been Added", {
       position: "top-center",
-      autoClose: "4000",
-      hideProgressBar: false,
+      autoClose: "1000",
+      hideProgressBar: true,
       newestOnTop: false,
       closeOnClickrtl: false,
-      pauseOnFocusLossdraggablepauseOnHovertheme: false,
+      pauseOnFocusLossdraggablepauseOnHovertheme: true,
       theme: "dark",
     });
     setName("");
