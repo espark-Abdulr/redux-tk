@@ -8,7 +8,6 @@ const Options = () => {
   });
   return (
     <div>
-      {/* {console.log(data)} */}
       <div className="btn-group" role="group" aria-label="Basic example">
         <NavLink to={"/add"}>
           <button

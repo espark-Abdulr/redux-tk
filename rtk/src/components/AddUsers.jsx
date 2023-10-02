@@ -20,8 +20,6 @@ const AddUsers = () => {
     age: age,
   };
   const DataHandler = (event) => {
-    // console.log("Name: ", name);
-    // console.log("Age: ", age);
     dispatch(addUser(userInformation));
     toast.info("User Has Been Added", {
       position: "top-center",

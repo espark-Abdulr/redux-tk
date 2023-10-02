@@ -31,8 +31,6 @@ const ViewUsers = () => {
     setNewName(user.name);
     setNewAge(user.age);
     setEditId(user.unique);
-    // editObj.age = newAge;
-    // console.log("Old: ",user);
   };
   const DoEdit = (event) => {
     event.preventDefault();
@@ -55,7 +53,6 @@ const ViewUsers = () => {
           <button className="btn btn-info">Back To Home</button>
         </NavLink>
       </div>
-      {/* {console.log(data[0].unique)} */}
       {showEdit ? (
         <form
           style={{
@@ -103,8 +100,8 @@ const ViewUsers = () => {
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Age</th>
-              <th scope="col">Edit option</th>
               <th scope="col">Delete Option</th>
+              <th scope="col">Edit option</th>
             </tr>
           </thead>
           <tbody>
