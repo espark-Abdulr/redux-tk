@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addUser } from "../features/mySlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,9 +8,9 @@ import { NavLink } from "react-router-dom";
 
 const AddUsers = () => {
   // const [users,setUsers] = useState([])
-  const data = useSelector((c) => {
-    return c.UserData.users;
-  });
+  // const data = useSelector((c) => {
+  //   return c.UserData.users;
+  // });
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -23,11 +23,11 @@ const AddUsers = () => {
     dispatch(addUser(userInformation));
     toast.info("User Has Been Added", {
       position: "top-center",
-      autoClose: "1000",
+      autoClose: "0",
       hideProgressBar: true,
       newestOnTop: false,
       closeOnClickrtl: false,
-      pauseOnFocusLossdraggablepauseOnHovertheme: true,
+      pauseOnFocusLossdraggablepauseOnHovertheme: false,
       theme: "dark",
     });
     setName("");
@@ -52,7 +52,7 @@ const AddUsers = () => {
       <div style={{ color: "white" }}>
         <form onSubmit={DataHandler}>
           <div className="form-group">
-            <label for="exampleInputEmail1">Name</label>
+            <label htmlFor="exampleInputEmail1">Name</label>
             <br />
             <input
               type="text"
@@ -65,7 +65,7 @@ const AddUsers = () => {
           </div>
           <div className="form-group">
             <br />
-            <label for="exampleInputPassword1">Age</label>
+            <label htmlFor="exampleInputPassword1">Age</label>
             <br />
             <input
               type="number"

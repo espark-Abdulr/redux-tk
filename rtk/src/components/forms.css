@@ -1,0 +1,91 @@
+.signup-main {
+  height: 450px;
+  width: 450px;
+  /* background-color: white;
+  border-radius: 8px;
+  box-shadow: -1px 0px 3px 8px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  backdrop-filter: blur(19px) saturate(0%);
+  -webkit-backdrop-filter: blur(19px) saturate(0%);
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+.signin-main {
+  height: 350px;
+  width: 350px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: -1px 0px 3px 8px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup-main form,
+.signin-main form {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  row-gap: 15px;
+  padding-top: 20px;
+}
+.signin-main form {
+  height: 65%;
+}
+.signup-main form input,
+.signup-main form button,
+.signin-main form input,
+.signin-main form button {
+  height: 50px;
+  width: 80%;
+}
+
+.signup-main form input,
+.signin-main form input {
+  border: 1px solid rgb(126, 124, 124);
+  outline: none;
+  transition: border 0.5s;
+}
+.signup-main form input:focus,
+.signin-main form input:focus {
+  border: 1px solid rgb(121, 210, 240) !important;
+}
+.signup-main form button,
+.signin-main form button {
+  background-image: linear-gradient(to left, #74ebd5, #9face6);
+  border: none;
+  color: white;
+  transition: all 3s ease-in-out;
+}
+.signup-main form button:hover{
+  background-image: linear-gradient(360deg, #74ebd5, #9face6);
+}
+
+.signin-main form button {
+  background-image: linear-gradient(to right, #74ebd5, #9face6);
+}
+.signin-main form button:hover{
+  background-image: linear-gradient(180deg, #74ebd5, #9face6);
+}
+.signup-main h3,
+.signin-main h3 {
+  font-size: 15px;
+}
+.signup-main h3 a,
+.signin-main h3 a {
+  text-decoration: none;
+  color: #9face6;
+}

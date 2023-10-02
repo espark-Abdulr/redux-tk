@@ -95,7 +95,7 @@ const ViewUsers = () => {
           </button>
         </form>
       ) : (
-        <table className="table-dark">
+        <table className="table table-hover table-dark table-striped">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -106,10 +106,15 @@ const ViewUsers = () => {
           </thead>
           <tbody>
             {data.map((eachUser, index) => (
-              <tr key={index} style={{ height: "50px" }}>
-                <td style={{ width: "25vw" }}>{eachUser.name}</td>
-                <td style={{ width: "25vw" }}>{eachUser.age}</td>
-                <td style={{ width: "25vw" }}>
+              <tr
+                key={index}
+                style={{
+                  height: "70px",
+                }}
+              >
+                <td style={{ minWidth: "25vw" }}>{eachUser.name}</td>
+                <td style={{ minWidth: "25vw" }}>{eachUser.age}</td>
+                <td style={{ minWidth: "25vw" }}>
                   <button
                     type="button"
                     className="btn btn-danger"
@@ -118,7 +123,7 @@ const ViewUsers = () => {
                     Delete
                   </button>
                 </td>
-                <td style={{ width: "25vw" }}>
+                <td style={{ minWidth: "25vw" }}>
                   <button
                     type="button"
                     className="btn btn-info"
